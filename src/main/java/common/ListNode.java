@@ -38,4 +38,15 @@ public class ListNode {
 		}
 		return JSON.toJSONString(list);
 	}
+
+	@Override
+	public String toString() {
+		ArrayList<Integer> list = new ArrayList<>();
+		ListNode head = this;
+		while (head != null) {
+			list.add(head.val);
+			head = head.next;
+		}
+		return JSON.toJSONString(list);
+	}
 }

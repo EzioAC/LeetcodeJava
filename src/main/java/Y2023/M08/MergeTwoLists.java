@@ -5,21 +5,8 @@ import org.junit.jupiter.api.Test;
 
 public class MergeTwoLists {
 	public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-		if(list1 == null) {
-			return list2;
-		}
-		if(list2 == null) {
-			return list1;
-		}
-		ListNode head = null;
-		if(list1.val < list2.val) {
-			head = list1;
-			list1 = list1.next;
-		} else {
-			head = list2;
-			list2 = list2.next;
-		}
-		ListNode curr = head;
+		ListNode resPointer = new ListNode(0);
+		ListNode curr = resPointer;
 		while(true) {
 			if(list1 == null) {
 				curr.next = list2;
@@ -38,7 +25,7 @@ public class MergeTwoLists {
 			}
 			curr = curr.next;
 		}
-		return head;
+		return resPointer.next;
 	}
 
 	@Test
